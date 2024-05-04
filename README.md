@@ -1,7 +1,7 @@
 # Scrapy with Splash Data Scraper
 
 ## Overview
-This project showcases an web scraping solution using the Scrapy framework paired with Splash for handling dynamic content rendered with JavaScript. 
+This project showcases a web scraping solution using the Scrapy framework paired with Splash for handling dynamic content rendered with JavaScript. 
 
 ## Features
 - **Dynamic content handling**: Utilizes Splash to render JavaScript-generated content on the webpage.
