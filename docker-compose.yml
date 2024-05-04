@@ -1,0 +1,24 @@
+services:
+  scrappy-service:
+    build:
+      context: .  # The build context directory for the Flask service, containing the Dockerfile.
+      dockerfile: Dockerfile  # Specifies the Dockerfile to use for building the Flask service.
+    container_name: scrappy-container  # Sets a custom name for the running container.
+    ports:
+      - "5000:5000"  # Maps port 5000 on the host to port 5000 in the container for splash
+    volumes:
+      - .:/Scrappy # Mounts the current directory to /HHViz in the container for live updates.
+    networks:
+      - scrappy-splash-network
+
+  splash-service:
+    image: scrapinghub/splash
+    container_name: splash-container
+    ports:
+      - "8050:8050"  # Port for the Splash service
+    restart: always
+    networks:
+      - scrappy-splash-network
+
+networks:
+  scrappy-splash-network:
